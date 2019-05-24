@@ -1,6 +1,6 @@
-<?php 
+<?php
 include("classfile.php");
-/*$admin=new mysqli(HOST,DB_USER,DB_PASS,DB)  or die(mysqli_error());    
+/*$admin=new mysqli(HOST,DB_USER,DB_PASS,DB)  or die(mysqli_error());
 $sql="SELECT email,password,ConfirmPassword FROM youth";
 $action=$admin->query($sql) or die('SOMETHING IS WRONG WITH'.' '.$sql);
 $found=$action->num_rows;*/
@@ -29,7 +29,7 @@ if(isset($_POST["submit"])){
                 $error = $key. "passwords can only be Alphanumeric";
                 echo $error;
             } }
-           
+
 
         }
 
@@ -45,8 +45,8 @@ if(isset($_POST["submit"])){
 
         if($found ==1){
             $_session['at']=$recieved['email'];
-            die(header("location:Admin.php"));
-        
+            die(header("location:AdminDashboard.php"));
+
         }else{$ok="Invalid login";
           echo $ok;
         }
@@ -94,13 +94,13 @@ div {
     background-color: #999999;
     padding: 40px;
     text-align:center;
-} 
+}
 body{
 background-size:cover;
 background-attachment:fixed;
 background-position:top;
 
-} 
+}
     </style>
 </head>
 <body>
@@ -115,8 +115,8 @@ background-position:top;
         <label for="password">Confirm Password:</label><br><br>
         <input type="password" name="ConfirmPassword"><br><br>
         <button type="submit" name="submit">LOGIN</button>
-    
-    
+
+
     </form>
     </div>
 </body>

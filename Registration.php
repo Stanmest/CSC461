@@ -1,7 +1,7 @@
 <?PHP
 include("classfile.php");
 $Gop = new general_Ops;
-if(isset($_POST["submit"])){ 
+if(isset($_POST["submit"])){
 $MyFirstname=$_POST["Firstname"];
 $MySurname=$_POST["Surname"];
 $MyLastname=$_POST["User_name"];
@@ -12,7 +12,7 @@ $MyPassword=$_POST["ConfirmPassword"];
 $MyPhone=$_POST["Phone"];
 $MyGender=$_POST["gender"];
 $MyLga=$_POST["LGA"];
- //echo("Registration Successfull");  
+ //echo("Registration Successfull");
  if($_POST["password"] !== $_POST["ConfirmPassword"]){$pass = "Passwords are not the same";
     echo $pass;
 } else{$recieved=$_POST;// print_r($recieved);
@@ -43,12 +43,12 @@ $MyLga=$_POST["LGA"];
             echo $pass;
         }*/
     }
-    
+
 }
    if(!isset($error)){
         //  new SQL_ops();
         $connect = new mysqli(HOST,DB_USER,DB_PASS,DB);
-        
+
      //Select column from Database
      $stan = "SELECT email,User_name FROM youth WHERE email = '".$recieved['email']."' and User_name = '".$recieved['User_name']."'";
      //Query the Database
@@ -64,7 +64,7 @@ $MyLga=$_POST["LGA"];
       $ourquery1 = $connect->query($insertquery) or die('Error something is wrong with'.' '.$insertquery);
       if($ourquery1){
           $_session['at'] = $recieved['email'];
-          die(header("location:dashboard.php"));
+          die(header("location:Login.php"));
       }
   }else{$error = "Email is already in use";
     echo $error;
@@ -89,10 +89,10 @@ $MyLga=$_POST["LGA"];
         .Holder{
             text-align: center;
             background-color:rosybrown;
-        
-    
 
-            
+
+
+
         }
     </style>
 </head>

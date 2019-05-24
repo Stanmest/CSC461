@@ -36,11 +36,14 @@ if(isset($_POST["Retrive"])){
       $tm= time(); //get the current time stamp
       $pass=rand(3000,30000);//generate random between 300 and 300000.
      // this line of code Insert into the database
-     $insertquery = "INSERT INTO Retrive(email,random,issueTime) VALUES('".$recieved['email']."','".$pass."','".$tm."')";
+     $insertquery = "INSERT INTO retrive(email,random,issueTime) VALUES('".$recieved['email']."','".$pass."','".$tm."')";
      //this line of queries the database and checks if it is true.
      $ourquery1 = $connect->query($insertquery) or die('Error something is wrong with'.' '.$insertquery);
      if($ourquery1){
-        $success = 'Password Changed';
+       $_session['at']=$recieved['email'];
+       die(header("location:Login.php"));
+       $success = 'Password Changed';
+    //  $success="SELECT Firstname,Surname,User_name,email,Age,Gender,Phone,LGA,password FROM youth";
         echo $success;
     }
 
