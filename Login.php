@@ -10,7 +10,7 @@ if(isset($_POST["submit"])){
     $MyChoosepassword=$_POST["password"];
     $MyPassword=$_POST["ConfirmPassword"];
 
-      //make sure the password and confirmpassword is same
+      //make sure the password and  confirmpassword is same
     if($_POST["password"] !== $_POST["ConfirmPassword"]){$pass = "Invalid Login";
         echo $pass;
     }

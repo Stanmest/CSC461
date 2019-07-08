@@ -27,7 +27,7 @@ if($found > 0){
     border: 1px solid black;
     border-collapse: collapse;
 }
-th, td {
+th,td {
     padding: 6px;
 }table#t01 {
     width: 100%;    
